@@ -1,15 +1,213 @@
 <!DOCTYPE html>
-<html lang="el">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anebitis</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anebitis — Artist Lab</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#0e0e0e;
+  color:#f2f2f2;
+}
+
+header{
+  padding:25px;
+  border-bottom:1px solid #333;
+  display:flex;
+  justify-content:space-between;
+}
+
+header a{
+  color:#aaa;
+  margin-left:15px;
+  text-decoration:none;
+}
+
+header a:hover{
+  color:white;
+}
+
+.hero{
+  padding:120px 40px;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:60px;
+  letter-spacing:4px;
+  margin-bottom:10px;
+}
+
+.hero p{
+  color:#bbb;
+  font-size:20px;
+}
+
+.section{
+  padding:80px 40px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.section h2{
+  margin-bottom:30px;
+  font-size:28px;
+  border-bottom:1px solid #333;
+  padding-bottom:10px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:#171717;
+  padding:20px;
+  border-radius:10px;
+}
+
+.card img{
+  width:100%;
+  border-radius:8px;
+}
+
+.card p{
+  color:#aaa;
+}
+
+.about{
+  max-width:700px;
+  line-height:1.7;
+  color:#ccc;
+}
+
+footer{
+  border-top:1px solid #333;
+  padding:40px;
+  text-align:center;
+  color:#777;
+}
+</style>
+
 </head>
+
 <body>
-  <h1>Anebitis</h1>
-  <p>Artist / Animator / Media Artist</p>
-  <p>Official website under construction.</p>
+
+<header>
+<div><strong>ANEBITIS</strong></div>
+<div>
+<a href="#work">Work</a>
+<a href="#sketchbook">Sketchbook</a>
+<a href="#lab">Lab</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</div>
+</header>
+
+<section class="hero">
+<h1>ANEBITIS</h1>
+<p>Artist / Animator / Media Artist</p>
+<p>Sketches • Animation • Comics • Experimental Media</p>
+</section>
+
+<section id="work" class="section">
+<h2>Selected Work</h2>
+<div class="grid">
+
+<div class="card">
+<img src="https://via.placeholder.com/600x400">
+<h3>Animation</h3>
+<p>Short films and animation experiments.</p>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/600x400">
+<h3>Comics</h3>
+<p>Visual storytelling and comic projects.</p>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/600x400">
+<h3>Video Art</h3>
+<p>Experimental visual media and video art works.</p>
+</div>
+
+</div>
+</section>
+
+<section id="sketchbook" class="section">
+<h2>Sketchbook</h2>
+<div class="grid">
+
+<div class="card">
+<img src="https://via.placeholder.com/600x400">
+<p>Daily sketches and studies.</p>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/600x400">
+<p>Figure drawing and pose studies.</p>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/600x400">
+<p>Character exploration sketches.</p>
+</div>
+
+</div>
+</section>
+
+<section id="lab" class="section">
+<h2>Artist Lab</h2>
+<div class="grid">
+
+<div class="card">
+<img src="https://via.placeholder.com/600x400">
+<p>Animation tests and motion studies.</p>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/600x400">
+<p>Generative and coding experiments.</p>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/600x400">
+<p>Visual research and experimental ideas.</p>
+</div>
+
+</div>
+</section>
+
+<section id="about" class="section">
+<h2>About</h2>
+<div class="about">
+<p>
+Anebitis is the artistic identity of Ioannis Anebitis, a Greek artist working across drawing, animation, comics and experimental visual media.
+</p>
+
+<p>
+His work explores visual storytelling, symbolism and artistic research through sketches, moving images and hybrid artistic practices.
+</p>
+</div>
+</section>
+
+<section id="contact" class="section">
+<h2>Contact</h2>
+<p>Email: your@email.com</p>
+<p>Instagram</p>
+<p>ArtStation</p>
+<p>YouTube</p>
+</section>
+
+<footer>
+© Anebitis — Artist Laboratory
+</footer>
+
 </body>
 </html>
-
-Create first homepage
