@@ -4,209 +4,430 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Anebitis — Artist Lab</title>
-
+<meta name="description" content="Portfolio and artist laboratory of Anebitis — animation, comics, sketches, video art and experimental media.">
 <style>
-body{
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background:#0e0e0e;
-  color:#f2f2f2;
-}
+  :root{
+    --bg:#0b0b0b;
+    --panel:#151515;
+    --panel-2:#1c1c1c;
+    --text:#f2f2f2;
+    --muted:#a8a8a8;
+    --line:#2f2f2f;
+    --accent:#ffffff;
+    --max:1150px;
+  }
 
-header{
-  padding:25px;
-  border-bottom:1px solid #333;
-  display:flex;
-  justify-content:space-between;
-}
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+  }
 
-header a{
-  color:#aaa;
-  margin-left:15px;
-  text-decoration:none;
-}
+  a{color:var(--text);text-decoration:none;}
 
-header a:hover{
-  color:white;
-}
+  .container{
+    width:min(92%, var(--max));
+    margin:0 auto;
+  }
 
-.hero{
-  padding:120px 40px;
-  text-align:center;
-}
+  header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(11,11,11,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
 
-.hero h1{
-  font-size:60px;
-  letter-spacing:4px;
-  margin-bottom:10px;
-}
+  .nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    padding:18px 0;
+  }
 
-.hero p{
-  color:#bbb;
-  font-size:20px;
-}
+  .brand{
+    font-size:0.95rem;
+    font-weight:700;
+    letter-spacing:0.14em;
+  }
 
-.section{
-  padding:80px 40px;
-  max-width:1100px;
-  margin:auto;
-}
+  .nav-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px;
+  }
 
-.section h2{
-  margin-bottom:30px;
-  font-size:28px;
-  border-bottom:1px solid #333;
-  padding-bottom:10px;
-}
+  .nav-links a{
+    color:var(--muted);
+    font-size:0.95rem;
+  }
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
-}
+  .nav-links a:hover{color:var(--accent);}
 
-.card{
-  background:#171717;
-  padding:20px;
-  border-radius:10px;
-}
+  .hero{
+    min-height:88vh;
+    display:flex;
+    align-items:center;
+    border-bottom:1px solid var(--line);
+  }
 
-.card img{
-  width:100%;
-  border-radius:8px;
-}
+  .hero-inner{
+    width:min(92%, 900px);
+    margin:0 auto;
+    text-align:center;
+    padding:80px 0;
+  }
 
-.card p{
-  color:#aaa;
-}
+  .hero h1{
+    margin:0 0 10px;
+    font-size:clamp(3rem, 8vw, 6rem);
+    letter-spacing:0.2em;
+    font-weight:700;
+  }
 
-.about{
-  max-width:700px;
-  line-height:1.7;
-  color:#ccc;
-}
+  .hero .subtitle{
+    margin:0;
+    font-size:clamp(1.1rem, 2vw, 1.4rem);
+    color:var(--text);
+  }
 
-footer{
-  border-top:1px solid #333;
-  padding:40px;
-  text-align:center;
-  color:#777;
-}
+  .hero .summary{
+    max-width:760px;
+    margin:26px auto 0;
+    color:var(--muted);
+    font-size:1.08rem;
+  }
+
+  .hero-actions{
+    margin-top:34px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+
+  .button{
+    display:inline-block;
+    padding:12px 18px;
+    border:1px solid var(--text);
+    border-radius:999px;
+    transition:0.2s ease;
+  }
+
+  .button.secondary{
+    border-color:var(--line);
+    color:var(--muted);
+  }
+
+  .button:hover{
+    background:var(--text);
+    color:var(--bg);
+  }
+
+  section{
+    padding:80px 0;
+    border-bottom:1px solid var(--line);
+  }
+
+  .section-title{
+    margin:0 0 12px;
+    font-size:1.9rem;
+  }
+
+  .section-intro{
+    max-width:760px;
+    color:var(--muted);
+    margin:0 0 34px;
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+    gap:22px;
+  }
+
+  .card{
+    background:linear-gradient(180deg, var(--panel), var(--panel-2));
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:22px;
+  }
+
+  .thumb{
+    width:100%;
+    aspect-ratio:4 / 3;
+    border-radius:12px;
+    background:#242424;
+    border:1px solid #333;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#666;
+    font-size:0.95rem;
+    margin-bottom:16px;
+  }
+
+  .card h3{
+    margin:0 0 10px;
+    font-size:1.1rem;
+  }
+
+  .card p{
+    margin:0;
+    color:var(--muted);
+    font-size:0.97rem;
+  }
+
+  .two-col{
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:28px;
+  }
+
+  .panel{
+    background:linear-gradient(180deg, var(--panel), var(--panel-2));
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:26px;
+  }
+
+  .panel p,
+  .panel li{
+    color:var(--muted);
+  }
+
+  .panel ul{
+    margin:14px 0 0;
+    padding-left:20px;
+  }
+
+  .small-title{
+    margin:0 0 12px;
+    font-size:1.05rem;
+  }
+
+  .contact-list{
+    display:grid;
+    gap:10px;
+  }
+
+  .contact-list a,
+  .contact-list span{
+    color:var(--muted);
+  }
+
+  .note{
+    margin-top:18px;
+    font-size:0.92rem;
+    color:#8d8d8d;
+  }
+
+  footer{
+    padding:28px 0 60px;
+    text-align:center;
+    color:#7d7d7d;
+  }
+
+  @media (max-width: 820px){
+    .nav{
+      flex-direction:column;
+      align-items:flex-start;
+    }
+    .two-col{grid-template-columns:1fr;}
+    .hero{min-height:auto;}
+  }
 </style>
-
 </head>
-
 <body>
 
 <header>
-<div><strong>ANEBITIS</strong></div>
-<div>
-<a href="#work">Work</a>
-<a href="#sketchbook">Sketchbook</a>
-<a href="#lab">Lab</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-</div>
+  <div class="container nav">
+    <div class="brand">ANEBITIS</div>
+    <nav class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#sketchbook">Sketchbook</a>
+      <a href="#lab">Lab</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
 </header>
 
 <section class="hero">
-<h1>ANEBITIS</h1>
-<p>Artist / Animator / Media Artist</p>
-<p>Sketches • Animation • Comics • Experimental Media</p>
+  <div class="hero-inner">
+    <h1>ANEBITIS</h1>
+    <p class="subtitle">Artist / Animator / Media Artist</p>
+    <p class="summary">
+      Portfolio and artist laboratory of Ioannis Anebitis. A space for sketches, animation, comics, video art,
+      visual research and experimental media.
+    </p>
+    <div class="hero-actions">
+      <a class="button" href="#work">Enter the Lab</a>
+      <a class="button secondary" href="#about">About the Artist</a>
+    </div>
+  </div>
 </section>
 
-<section id="work" class="section">
-<h2>Selected Work</h2>
-<div class="grid">
-
-<div class="card">
-<img src="https://via.placeholder.com/600x400">
-<h3>Animation</h3>
-<p>Short films and animation experiments.</p>
-</div>
-
-<div class="card">
-<img src="https://via.placeholder.com/600x400">
-<h3>Comics</h3>
-<p>Visual storytelling and comic projects.</p>
-</div>
-
-<div class="card">
-<img src="https://via.placeholder.com/600x400">
-<h3>Video Art</h3>
-<p>Experimental visual media and video art works.</p>
-</div>
-
-</div>
+<section id="work">
+  <div class="container">
+    <h2 class="section-title">Selected Work</h2>
+    <p class="section-intro">
+      This first version gathers the main areas of the practice under one umbrella. Later, each body of work can grow into its own page.
+    </p>
+    <div class="grid">
+      <article class="card">
+        <div class="thumb">Project image / still frame</div>
+        <h3>Animation</h3>
+        <p>Short films, thesis work, motion studies and animation experiments.</p>
+      </article>
+      <article class="card">
+        <div class="thumb">Comic page / cover</div>
+        <h3>Comics</h3>
+        <p>Story development, comic projects, narrative sketches and visual storytelling.</p>
+      </article>
+      <article class="card">
+        <div class="thumb">Artwork / still image</div>
+        <h3>Illustration</h3>
+        <p>Independent drawings, character studies, symbolic images and mixed visual work.</p>
+      </article>
+      <article class="card">
+        <div class="thumb">Video frame / installation still</div>
+        <h3>Video Art</h3>
+        <p>Experimental moving image works, research-based visual pieces and hybrid media projects.</p>
+      </article>
+    </div>
+  </div>
 </section>
 
-<section id="sketchbook" class="section">
-<h2>Sketchbook</h2>
-<div class="grid">
-
-<div class="card">
-<img src="https://via.placeholder.com/600x400">
-<p>Daily sketches and studies.</p>
-</div>
-
-<div class="card">
-<img src="https://via.placeholder.com/600x400">
-<p>Figure drawing and pose studies.</p>
-</div>
-
-<div class="card">
-<img src="https://via.placeholder.com/600x400">
-<p>Character exploration sketches.</p>
-</div>
-
-</div>
+<section id="sketchbook">
+  <div class="container">
+    <h2 class="section-title">Sketchbook</h2>
+    <p class="section-intro">
+      Most of the current material begins here. Sketches are not leftovers. They are evidence of thinking, searching and sharpening the hand.
+    </p>
+    <div class="grid">
+      <article class="card">
+        <div class="thumb">Daily sketch</div>
+        <h3>Daily Drawing</h3>
+        <p>Loose drawings, notebook pages and raw visual notes.</p>
+      </article>
+      <article class="card">
+        <div class="thumb">Figure study</div>
+        <h3>Studies</h3>
+        <p>Figure drawing, anatomy, gesture, pose work and formal exercises.</p>
+      </article>
+      <article class="card">
+        <div class="thumb">Character exploration</div>
+        <h3>Character Sketches</h3>
+        <p>Character ideas, expressions, silhouettes and exploratory visual development.</p>
+      </article>
+      <article class="card">
+        <div class="thumb">Visual notes</div>
+        <h3>Notebook Fragments</h3>
+        <p>Fragments, symbols, unfinished ideas and pages that may later become projects.</p>
+      </article>
+    </div>
+  </div>
 </section>
 
-<section id="lab" class="section">
-<h2>Artist Lab</h2>
-<div class="grid">
-
-<div class="card">
-<img src="https://via.placeholder.com/600x400">
-<p>Animation tests and motion studies.</p>
-</div>
-
-<div class="card">
-<img src="https://via.placeholder.com/600x400">
-<p>Generative and coding experiments.</p>
-</div>
-
-<div class="card">
-<img src="https://via.placeholder.com/600x400">
-<p>Visual research and experimental ideas.</p>
-</div>
-
-</div>
+<section id="lab">
+  <div class="container">
+    <h2 class="section-title">Artist Lab</h2>
+    <p class="section-intro">
+      This is the research side of the practice: animation tests, visual experiments, coding sketches and hybrid studies.
+    </p>
+    <div class="grid">
+      <article class="card">
+        <div class="thumb">Animation test</div>
+        <h3>Motion Experiments</h3>
+        <p>Timing tests, frame studies and small moving-image trials.</p>
+      </article>
+      <article class="card">
+        <div class="thumb">Code / generated image</div>
+        <h3>Generative Work</h3>
+        <p>Coding experiments, digital structures and procedural visual ideas.</p>
+      </article>
+      <article class="card">
+        <div class="thumb">Research board</div>
+        <h3>Visual Research</h3>
+        <p>Reference studies, thematic investigations and symbolic development.</p>
+      </article>
+      <article class="card">
+        <div class="thumb">Work in progress</div>
+        <h3>Work in Progress</h3>
+        <p>Open projects, unfinished sequences and evolving material.</p>
+      </article>
+    </div>
+  </div>
 </section>
 
-<section id="about" class="section">
-<h2>About</h2>
-<div class="about">
-<p>
-Anebitis is the artistic identity of Ioannis Anebitis, a Greek artist working across drawing, animation, comics and experimental visual media.
-</p>
+<section id="about">
+  <div class="container two-col">
+    <div class="panel">
+      <h2 class="section-title">About</h2>
+      <p>
+        Anebitis is the artistic identity of Ioannis Anebitis, a Greek artist working across drawing, animation,
+        comics and experimental visual media.
+      </p>
+      <p>
+        His practice moves between sketchbook process, visual storytelling, symbolic image-making,
+        moving image and research-based experimentation.
+      </p>
+      <p>
+        This website functions both as a portfolio and as an evolving archive of works, studies and artistic development.
+      </p>
+    </div>
 
-<p>
-His work explores visual storytelling, symbolism and artistic research through sketches, moving images and hybrid artistic practices.
-</p>
-</div>
+    <div class="panel">
+      <h3 class="small-title">Current Focus</h3>
+      <ul>
+        <li>Sketch-based visual development</li>
+        <li>Animation and moving image</li>
+        <li>Comics and narrative experimentation</li>
+        <li>Video art and hybrid media</li>
+        <li>Artistic research and process documentation</li>
+      </ul>
+      <p class="note">
+        Later we can replace this panel with a full biography, exhibitions, education, awards and selected projects.
+      </p>
+    </div>
+  </div>
 </section>
 
-<section id="contact" class="section">
-<h2>Contact</h2>
-<p>Email: your@email.com</p>
-<p>Instagram</p>
-<p>ArtStation</p>
-<p>YouTube</p>
+<section id="contact">
+  <div class="container two-col">
+    <div class="panel">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-list">
+        <span>Email: your@email.com</span>
+        <span>Instagram: add link later</span>
+        <span>ArtStation: add link later</span>
+        <span>YouTube: add link later</span>
+        <span>Vimeo: add link later</span>
+      </div>
+      <p class="note">
+        Replace these placeholders with your real links. No fake polish, just clean access.
+      </p>
+    </div>
+
+    <div class="panel">
+      <h3 class="small-title">Next Step</h3>
+      <p>
+        This is Version 1: a clean structure. The real power comes when the placeholders are replaced with actual works,
+        project pages, selected images, embedded videos and a proper artist biography.
+      </p>
+    </div>
+  </div>
 </section>
 
 <footer>
-© Anebitis — Artist Laboratory
+  <div class="container">© Anebitis — Artist Laboratory</div>
 </footer>
 
 </body>
